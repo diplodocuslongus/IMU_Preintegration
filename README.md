@@ -12,6 +12,9 @@ cd build \
 cmake .. \
 make -j4
 
+or $ cmake -DOpenCV_DIR=$HOME/libs/opencv/ocv4100/lib/cmake/opencv4 ..
+
+
 Don't forget to change the path to your dataset
 
 This dataset is available online too \

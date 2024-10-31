@@ -25,13 +25,19 @@ LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 # 查找依赖库。
 find_package(Eigen3 REQUIRED)
 find_package(Cholmod REQUIRED)
-
+find_package(OpenCV REQUIRED )
+include_directories(${OpenCV_INCLUDE_DIRS})
+#find_package(OpenCV REQUIRED PATHS $HOME/libs/opencv/ocv4100/lib/cmake NO_DEFAULT_PATH)
+#find_package(OpenCV REQUIRED PATHS $HOME/libs/opencv/ocv4100/lib/cmake/opencv4 NO_DEFAULT_PATH)
+#find_package(OpenCV 4.10.0 EXACT REQUIRED PATHS $HOME/libs/opencv/ocv4100/lib/cmake/opencv4 NO_DEFAULT_PATH)
+MESSAGE("This is opencv include dir: ${OpenCV_INCLUDE_DIR}")
 # include工程目录。
 include_directories(
 ${PROJECT_SOURCE_DIR}
 ${PROJECT_SOURCE_DIR}/include
 ${EIGEN3_INCLUDE_DIR}
 ${CHOLMOD_INCLUDE_DIR}
+#${OpenCV_INCLUDE_DIR}
 )
 
 # 设置CMake库输出目录。
